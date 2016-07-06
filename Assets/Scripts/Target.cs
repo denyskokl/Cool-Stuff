@@ -16,12 +16,12 @@ public class Target : MonoBehaviour
     void OnMouseDown()
     {
         _currentPosition = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-        _previousLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _currentPosition.z);
+		_previousLocation = new Vector3(Input.mousePosition.x, _currentPosition.y,  Input.mousePosition.y);
     }
    
     void OnMouseDrag()
     {
-        _currentLocation = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _currentPosition.z);
+		_currentLocation = new Vector3(Input.mousePosition.x, _currentPosition.y,  Input.mousePosition.y);
         _difference = _currentLocation - _previousLocation;
         _previousLocation = _currentLocation;
     }
